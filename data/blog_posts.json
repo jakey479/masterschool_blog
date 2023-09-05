@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "title": "I am",
+        "author": "Jacob Torres",
+        "content": "The Best",
+        "timestamp": "2023-09-05 17:57"
+    },
+    {
+        "title": "I am",
+        "author": "Frank Carusi",
+        "content": "The Worst",
+        "timestamp": "2023-09-05 18:06"
+    },
+    {
+        "title": "About Frank",
+        "author": "Jacob Torres",
+        "content": "irrelevant",
+        "timestamp": "2023-09-05 18:09"
+    },
+    {
+        "title": "Tornado Tuesday",
+        "author": "Caitie Kelly",
+        "content": "Shake it. ",
+        "timestamp": "2023-09-05 18:18"
+    }
+]
