@@ -1,26 +1,16 @@
 [
     {
-        "title": "I am",
-        "author": "Jacob Torres",
-        "content": "The Best",
-        "timestamp": "2023-09-05 17:57"
+        "title": "the",
+        "author": "best",
+        "content": "this is the shit",
+        "timestamp": "2023-09-08 15:07",
+        "id": "5aca5095-1730-43f9-af47-b09ecae08262"
     },
     {
-        "title": "I am",
-        "author": "Frank Carusi",
-        "content": "The Worst",
-        "timestamp": "2023-09-05 18:06"
-    },
-    {
-        "title": "About Frank",
-        "author": "Jacob Torres",
-        "content": "irrelevant",
-        "timestamp": "2023-09-05 18:09"
-    },
-    {
-        "title": "Tornado Tuesday",
-        "author": "Caitie Kelly",
-        "content": "Shake it. ",
-        "timestamp": "2023-09-05 18:18"
+        "title": "my post",
+        "author": "me",
+        "content": "this is my post mafk, yakno, brother",
+        "timestamp": "2023-09-08 18:34",
+        "id": "16b9b6aa-cf4b-48ad-9458-8886b37d536f"
     }
 ]

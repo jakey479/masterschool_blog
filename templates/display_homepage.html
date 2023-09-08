@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Wild West</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homepage.css') }}">
+</head>
+<body>
+    <header class="logo-background">
+        <h1>Word Wild West</h1>
+    </header>
+    <section class="create-post">
+        <form action="/add_blog_post" method="POST">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required><br><br>
+
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
+
+            <input class="create-post-button" type="submit" value="Create Post">
+            <button class="show-posts">View Posts</button>
+
+        </form>
+    </section>
+    <main>
+        <section class="display-posts">
+            <!-- using a filter here to perform data manipulation
+             on the blog_posts object passed to this template -->
+            {% if blog_posts|length >= 1 %}
+            <div class="container">
+                <ul>
+                    {% for post in blog_posts %}
+                    <li>
+                        <h2>{{ post.title }}</h2>
+                        <p>{{ post.content }}</p>
+                        <p><strong>Author:</strong> {{ post.author }}</p>
+                        <p><strong>Posted on:</strong> {{ post.timestamp }}</p>
+                        <a class="update-post-button" href="#">Update Post</a>
+                        <a href="{{ url_for('delete_blog_post', post_id=post.id) }}">Delete Post</a>
+                        <form class="update-blog-post" action="/update_blog_post/{{ post.id }}" method="POST" style="display: none;">
+                            <textarea name="updated_blog_post_content" rows="4" cols="50" required>{{ post.content }}</textarea>
+                            <input type="submit" value="Update Post">
+                        </form>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!--  -->
+            {% else %}
+                <p>No blog posts available.</p>
+            {% endif %}
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Word Wild West</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select the "Update Post" anchors and corresponding update forms
+            const updatePostAnchors = document.querySelectorAll(".update-post-button");
+            const updateForms = document.querySelectorAll(".update-blog-post");
+
+            // Hide all update forms initially
+            updateForms.forEach(function (form) {
+                form.style.display = "none";
+            });
+
+            // Add a click event listener to each "Update Post" anchor
+            updatePostAnchors.forEach(function (anchor, index) {
+                anchor.addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    // Toggle the visibility of the corresponding update form
+                    if (updateForms[index].style.display === "none") {
+                        updateForms[index].style.display = "block";
+                    } else {
+                        updateForms[index].style.display = "none";
+                    }
+                });
+            });
+
+            // Select the button and posts container
+            const showPostsButton = document.querySelector(".show-posts");
+            const postsContainer = document.querySelector(".container");
+
+            // Hide the posts initially
+            postsContainer.style.display = "none";
+
+            // Add a click event listener to the button
+            showPostsButton.addEventListener("click", function () {
+                // Toggle the visibility of the posts container
+                if (postsContainer.style.display === "none") {
+                    postsContainer.style.display = "block";
+                } else {
+                    postsContainer.style.display = "none";
+                }
+            });
+
+            // Add click event listeners to toggle the "expanded" class on li elements
+            const liElements = document.querySelectorAll(".container li");
+            liElements.forEach(function (li) {
+                li.addEventListener("click", function () {
+                    li.classList.toggle("expanded");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

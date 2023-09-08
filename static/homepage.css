@@ -1,0 +1,137 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #306DAB;
+    color: #F98C1F;
+    min-width: 400px;
+}
+
+.logo-background {
+    border-radius: 8px ;
+    background-color: #0D4F90;
+    padding: 20px;
+    text-align: center;
+}
+
+.create-post {
+    margin: 30px auto;
+    max-width: 600px;
+    width: 45%;
+    background-color: #8CAAC9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.create-post label {
+    font-size: 1.2em;
+    background-color: #0D4F90;
+    padding: 5px 15px;
+    border-radius: 5px;
+    width: 40%;
+}
+
+.create-post input[type="text"],
+.create-post textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1.2em;
+}
+
+.create-post input[type="submit"],
+.show-posts {
+    max-height: 100px;
+    display: inline;
+    width: 40%;
+    padding: 20px;
+    background-color: #0D4F90;
+    color: #F98C1F;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: center; /* Center text horizontally within the button */
+    vertical-align: middle; /* Vertically align the button and header */
+}
+
+.create-post input[type="submit"]:hover, .show-posts:hover {
+    background-color: #333; /* Darker color on hover for engagement */
+}
+
+main {
+    background-color: #8CAAC9;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply flex properties directly to the ul element */
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Style individual list items */
+section li {
+    list-style: none;
+    width: 30%;
+    height: 200px; /* Set a fixed height for all li elements */
+    overflow: hidden; /* Hide content that exceeds the fixed height */
+    transition: height 0.3s; /* Smoothly transition height changes */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    margin: 10px 2px; /* Add margin to separate li elements */
+}
+
+section li.expanded {
+    height: auto; /* Allow li elements to expand to fit content */
+    overflow: visible; /* Display content that exceeds the fixed height */
+    transition: height 0.3s; /* Smoothly transition height changes */
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+section p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+section strong {
+    font-weight: bold;
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4285f4; /* Engaging footer background color */
+    color: #fff; /* White text color */
+}
+
+.update-blog-post {
+    display: none;
+}
+
+.update-blog-post textarea {
+    width: 80%;
+}
